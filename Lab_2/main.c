@@ -32,9 +32,13 @@ int main () {
 			if (myChar == 0x0d) {
 				printNewLine();
 				break;
-			} 
-			charSendToUSART2(myChar);
-			command[i] = (char)myChar;
+			} else if (myChar == 0x08) {
+				charSendToUSART2(0x08);
+				i = i-2;
+			} else {
+				charSendToUSART2(myChar);
+			  command[i] = (char)myChar;
+			}
 		}
 		
 		
