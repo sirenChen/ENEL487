@@ -1,9 +1,8 @@
 //
-//  ComplexNumber.h
-//  Assignment2
+// ENEL 487 Assignment 2
+// Siren Chen
 //
-//  Created by Siren Chen on 15/10/17.
-//  Copyright © 2015年 Siren Chen. All rights reserved.
+// ComplexNumber.h
 //
 
 #ifndef ComplexNumber_h

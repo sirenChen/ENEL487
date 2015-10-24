@@ -1,13 +1,13 @@
 //
-//  ComplexNumber.c
-//  Assignment2
+// ENEL 487 Assignment 2
+// Siren Chen
 //
-//  Created by Siren Chen on 15/10/17.
-//  Copyright © 2015年 Siren Chen. All rights reserved.
+// ComplexNumber.c
 //
 
 #include "ComplexNumber.h"
 
+// Creat a complex number
 struct complexNumber creatComplexNumber(double real, double imag) {
     struct complexNumber temp;
     temp.real = real;
@@ -15,6 +15,7 @@ struct complexNumber creatComplexNumber(double real, double imag) {
     return temp;
 }
 
+// Add two complex number
 void addComplex(struct complexNumber a, struct complexNumber b) {
     struct complexNumber result;
     
@@ -24,6 +25,7 @@ void addComplex(struct complexNumber a, struct complexNumber b) {
     printComplex(result);
 }
 
+// Subtraction two complex number
 void subComplex(struct complexNumber a, struct complexNumber b) {
     struct complexNumber result;
     
@@ -33,6 +35,7 @@ void subComplex(struct complexNumber a, struct complexNumber b) {
     printComplex(result);
 }
 
+// Multiple two complex number
 void mulComplex(struct complexNumber a, struct complexNumber b) {
     struct complexNumber result;
     
@@ -42,6 +45,7 @@ void mulComplex(struct complexNumber a, struct complexNumber b) {
     printComplex(result);
 }
 
+// Devide complex a by complex b
 void divComplex(struct complexNumber a, struct complexNumber b) {
     struct complexNumber result;
     
@@ -53,6 +57,7 @@ void divComplex(struct complexNumber a, struct complexNumber b) {
     printComplex(result);
 }
 
+// Print the magnitude of the given complex number
 void absComplex(struct complexNumber a) {
     double result;
     
@@ -62,6 +67,7 @@ void absComplex(struct complexNumber a) {
     printf("%lg\n",result);
 }
 
+// Print the angle part of the given complex number , in radians
 void argComplex(struct complexNumber a) {
     double result = fabs(atan(a.imag/a.real));
     
@@ -79,6 +85,7 @@ void argComplex(struct complexNumber a) {
     printf("%lg\n", result);
 }
 
+// Print the argument of the given complex number, in degrees
 void argDegComplex(struct complexNumber a) {
     double result = fabs(atan(a.imag/a.real));
     
@@ -97,6 +104,8 @@ void argDegComplex(struct complexNumber a) {
     printf("%lg\n",result);
 }
 
+// For the given complex number, calculate the exponential
+// of that number, exp(z)
 void expComplex(struct complexNumber a) {
     struct complexNumber result;
     
@@ -106,6 +115,7 @@ void expComplex(struct complexNumber a) {
     printComplex(result);
 }
 
+// print the reciprocal of the given complex number: 1/z
 void invComplex(struct complexNumber a) {
     struct complexNumber result;
     
@@ -115,6 +125,7 @@ void invComplex(struct complexNumber a) {
     printComplex(result);
 }
 
+// Print the complex number
 void printComplex(struct complexNumber result) {
     char sign = '+';
     if (result.imag < 0) {

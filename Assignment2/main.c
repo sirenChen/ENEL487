@@ -1,20 +1,23 @@
 //
-//  main.c
-//  test
+// ENEL 487 Assignment 2
+// Siren Chen
 //
-//  Created by Siren Chen on 15/10/17.
-//  Copyright © 2015年 Siren Chen. All rights reserved.
+// main.c
 //
+
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "ComplexNumber.h"
 #include "string.h"
 
+// Read a line from user input
+// @pre Total char size of input must small than 100
 void readLine(char userInput[100]) {
     fgets(userInput, 100, stdin);
 }
 
+// Convert the Upper case to lower case
 void toLowerCase (char (*str)[100]){
     for (int i = 0; (*str)[i] != '\0'; i++) {
         if ((*str)[i] >= 'A' && (*str)[i] <= 'Z') {
@@ -23,6 +26,8 @@ void toLowerCase (char (*str)[100]){
     }
 }
 
+// Determine the if the input is complete or not
+// @pre Total char size of input must small than 100
 int inputComplete(char userInput[100]) {
     char aOperator[100] = "", aReal[100] = "", aImag[100] = "",
          bReal[100] = "", bImag[100] = "";
@@ -44,7 +49,7 @@ int inputComplete(char userInput[100]) {
     return 0;
 }
 
-
+// Map the operate command to int number
 int mapOperatorToInt (char aOperator[100]) {
     if (!(*aOperator)) {
         return -1;
@@ -76,6 +81,8 @@ int mapOperatorToInt (char aOperator[100]) {
 
 
 int main(int argc, const char * argv[]) {
+    printf("Enter exp: \n");
+    
     while (1) {
         char userInput[100] = "", aOperator[100]="";
         double aReal=0,aImag=0,bReal=0,bImag=0;
